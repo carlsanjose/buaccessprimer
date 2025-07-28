@@ -34,23 +34,55 @@
             margin: 0 auto;
         }
 
-        header {
-            background-color: #1e3a8a;
-            color: white;
+        .header-bg {
+            /* Updated: Gradient background and increased padding for height */
+            background: linear-gradient(to bottom, #ffffff, #1e3a8a); /* White to Darker Blue gradient */
+            color: #ffffff; /* White text on dark blue */
+            padding: 4rem 1rem; /* Increased padding for a longer header */
+            border-bottom-left-radius: 1.5rem; /* 24px / 16px = 1.5rem */
+            border-bottom-right-radius: 1.5rem; /* 24px / 16px = 1.5rem */
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* rem units for shadow */
+            width: 100%;
             text-align: center;
-            padding: 2rem 1rem;
-            border-bottom-left-radius: 1.5rem;
-            border-bottom-right-radius: 1.5rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            margin-bottom: 3rem; /* rem unit for margin */
             position: relative;
+            overflow: hidden;
+            z-index: 1; /* Ensure header is above other elements */
+            /* Removed direct background-image and opacity from here */
+        }
+
+        /* Pseudo-element for the subtle header background logo */
+        .header-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('access_logo-removebg-preview.png'); /* Using the uploaded logo */
+            background-repeat: no-repeat;
+            background-position: center center; /* Center the logo */
+            background-size: 150px; /* Adjust size of the single logo */
+            background-blend-mode: multiply; /* Blends the image with the background color */
+            opacity: 0.2; /* Adjusted opacity for the header background image */
+            z-index: -1; /* Place behind header content */
+        }
+
+        @media (min-width: 40rem) {
+            .header-bg {
+                padding: 6rem 1.5rem; /* Further increased padding for tablets and desktops */
+            }
         }
 
         .header-title {
-            font-family: 'Press Start 2P', cursive;
-            font-size: clamp(2rem, 8vw, 3rem);
+            font-size: clamp(2rem, 8vw, 3rem); /* Responsive font size for main title */
             font-weight: 800;
-            color: #fcd34d;
-            text-shadow: 0.25rem 0.25rem #000, 0.35rem 0.35rem #333;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 10; /* Ensure title is above header background logo */
+            color: #fcd34d; /* Yellow */
+            /* Increased text shadow for a more pronounced effect */
+            text-shadow: 0.25rem 0.25rem #000000, 0.35rem 0.35rem #333333; /* Multiple layers for depth */
         }
 
         /* Styles for the new logo container */
@@ -72,10 +104,12 @@
 
         .header-text {
             margin-top: 1.5rem;
-            font-size: clamp(1rem, 4vw, 1.125rem);
-            max-width: 48rem;
+            font-size: clamp(1rem, 4vw, 1.125rem); /* Responsive font size for header text */
+            max-width: 48rem; /* 768px / 16px = 48rem */
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 10; /* Ensure text is above header background logo */
         }
 
         .section-title {
