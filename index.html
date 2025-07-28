@@ -80,21 +80,31 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 10; /* Ensure title is above header background logo */
-            color: #e0ab07; /* Yellow */
+            color: #246697;
             /* Increased text shadow for a more pronounced effect */
-            text-shadow: 0.25rem 0.25rem #5b5b5b, 0.35rem 0.35rem #333333; /* Multiple layers for depth */
+            text-shadow: 0.25rem 0.25rem #e0ab07, 0.35rem 0.35rem #ffffff; /* Multiple layers for depth */
         }
 
         /* Styles for the new logo container */
         .header-logo-container {
-            margin-bottom: 1.5rem; /* Space between logo and title */
-            height: 100px; /* Example height for the logo area */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative; /* Needed for z-index */
-            z-index: 10; /* Ensure it's above the background logo */
-            opacity: 0.6;
+            position: absolute; /* Position relative to header-bg */
+            left: 0; /* Align to the left edge of the header-bg */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+            width: 300px; /* Visible width of the logo container (half of full logo width) */
+            height: 100%; /* Make it take up the full height of the header-bg */
+            overflow: hidden; /* Hide the overflowing part of the logo */
+            z-index: 10; /* Ensure it's above the background pseudo-element */
+            display: flex; /* Use flex to help align image within its visible window */
+            align-items: center; /* Vertically center the image within the container */
+        }
+        .header-logo-container img {
+            width: 200%; /* Make the image twice the width of its container */
+            height: 100%; /* Make the image fill the height of its container */
+            object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+            display: block; /* Remove extra space below image */
+            margin-left: -100%; /* Shift the image to the left by its container's width to show the right half */
+            opacity: 0.4;
         }
 
         /* Pixelated font for main titles and headers */
