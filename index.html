@@ -53,6 +53,18 @@
             text-shadow: 0.25rem 0.25rem #000, 0.35rem 0.35rem #333;
         }
 
+        /* Styles for the new logo container */
+        .header-logo-container {
+            margin-bottom: 1.5rem; /* Space between logo and title */
+            height: 100px; /* Example height for the logo area */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Needed for z-index */
+            z-index: 10; /* Ensure it's above the background logo */
+            opacity: 0.6;
+        }
+
         /* Pixelated font for main titles and headers */
         .pixel-font {
             font-family: 'Press Start 2P', cursive;
@@ -180,7 +192,11 @@
 <body class="antialiased">
     <div class="min-h-screen flex flex-col items-center pb-12">
         <header class="header-bg">
-            <div class="tech-pattern"></div>
+            <div class="header-logo-container">
+                <!-- You can place your <img> tag for the logo here -->
+                <!-- Example: <img src="access_logo-removebg-preview.png" alt="Organization Logo" class="h-24"> -->
+                 <img src="accesslogo.png" alt="BU ACCeSS Logo">
+            </div>
             <h1 class="header-title pixel-font">BU Academic Consortium of Computer Science Students</h1>
             <p class="header-text">
                 We are the Bicol University Academic Consortium of Computer Science Students. The official
