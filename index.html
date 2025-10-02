@@ -35,23 +35,20 @@
         }
 
         .header-bg {
-            /* Updated: Gradient background and increased padding for height */
-            background: linear-gradient(to bottom, #ffffff, #1e3a8a); /* White to Darker Blue gradient */
-            color: #ffffff; /* White text on dark blue */
-            padding: 4rem 1rem; /* Increased padding for a longer header */
-            border-bottom-left-radius: 1.5rem; /* 24px / 16px = 1.5rem */
-            border-bottom-right-radius: 1.5rem; /* 24px / 16px = 1.5rem */
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* rem units for shadow */
+            background: linear-gradient(to bottom, #ffffff, #1e3a8a);
+            color: #ffffff;
+            padding: 4rem 1rem;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
             width: 100%;
             text-align: center;
-            margin-bottom: 3rem; /* rem unit for margin */
+            margin-bottom: 3rem;
             position: relative;
             overflow: hidden;
-            z-index: 1; /* Ensure header is above other elements */
-            /* Removed direct background-image and opacity from here */
+            z-index: 1;
         }
 
-        /* Pseudo-element for the subtle header background logo */
         .header-bg::before {
             content: '';
             position: absolute;
@@ -59,67 +56,65 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('access_logo-removebg-preview.png'); /* Using the uploaded logo */
+            background-image: url('access_logo-removebg-preview.png');
             background-repeat: no-repeat;
-            background-position: center center; /* Center the logo */
-            background-size: 150px; /* Adjust size of the single logo */
-            background-blend-mode: multiply; /* Blends the image with the background color */
-            opacity: 0.2; /* Adjusted opacity for the header background image */
-            z-index: -1; /* Place behind header content */
+            background-position: center center;
+            background-size: 150px;
+            background-blend-mode: multiply;
+            opacity: 0.2;
+            z-index: -1;
         }
 
         @media (min-width: 40rem) {
             .header-bg {
-                padding: 6rem 1.5rem; /* Further increased padding for tablets and desktops */
+                padding: 6rem 1.5rem;
             }
         }
 
         .header-title {
-            font-size: clamp(1.5rem, 5vw, 2rem); /* Responsive font size for main title */
+            font-size: clamp(1.5rem, 5vw, 2rem);
             font-weight: 800;
             margin-bottom: 1rem;
             position: relative;
-            z-index: 10; /* Ensure title is above header background logo */
+            z-index: 10;
             color: #d5a30b;
-            /* Increased text shadow for a more pronounced effect */
-            text-shadow: 0.25rem 0.25rem #246697, 0.35rem 0.35rem #000; /* Multiple layers for depth */
+            text-shadow: 0.25rem 0.25rem #246697, 0.35rem 0.35rem #000;
         }
 
-        /* Styles for the new logo container */
         .header-logo-container {
-            position: absolute; /* Position relative to header-bg */
-            left: 0; /* Align to the left edge of the header-bg */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust for vertical centering */
-            width: 300px; /* Visible width of the logo container (half of full logo width) */
-            height: 100%; /* Make it take up the full height of the header-bg */
-            overflow: hidden; /* Hide the overflowing part of the logo */
-            z-index: 10; /* Ensure it's above the background pseudo-element */
-            display: flex; /* Use flex to help align image within its visible window */
-            align-items: center; /* Vertically center the image within the container */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 100%;
+            overflow: hidden;
+            z-index: 10;
+            display: flex;
+            align-items: center;
         }
+
         .header-logo-container img {
-            width: 200%; /* Make the image twice the width of its container */
-            height: 100%; /* Make the image fill the height of its container */
-            object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
-            display: block; /* Remove extra space below image */
-            margin-left: -100%; /* Shift the image to the left by its container's width to show the right half */
+            width: 200%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            margin-left: -100%;
             opacity: 0.4;
         }
 
-        /* Pixelated font for main titles and headers */
         .pixel-font {
             font-family: 'Press Start 2P', cursive;
         }
 
         .header-text {
             margin-top: 1.5rem;
-            font-size: clamp(1rem, 4vw, 1.125rem); /* Responsive font size for header text */
-            max-width: 48rem; /* 768px / 16px = 48rem */
+            font-size: clamp(1rem, 4vw, 1.125rem);
+            max-width: 48rem;
             margin-left: auto;
             margin-right: auto;
             position: relative;
-            z-index: 10; /* Ensure text is above header background logo */
+            z-index: 10;
         }
 
         .section-title {
@@ -170,12 +165,61 @@
             width: 1.5rem;
         }
 
-        .text-lg {
-            font-size: clamp(1rem, 3vw, 1.125rem);
+        /* START: ADDED TABLE STYLES */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 1.5rem;
         }
 
-        .text-xl {
-            font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+        .package-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 800px;
+            /* Prevents table from crushing on small screens */
+        }
+
+        .package-table th,
+        .package-table td {
+            border: 1px solid #bfdbfe;
+            padding: 0.75rem;
+            vertical-align: middle;
+        }
+
+        .package-table thead th {
+            background-color: #eff6ff;
+            font-weight: 600;
+            color: #1e40af;
+            text-align: center;
+        }
+
+        .package-table thead th:first-child {
+            text-align: left;
+        }
+
+        .package-table tbody td:not(:first-child) {
+            text-align: center;
+        }
+
+        .package-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .package-table .subheader-row th {
+            background-color: #dbeafe;
+            color: #1e40af;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .package-table strong {
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        /* END: ADDED TABLE STYLES */
+
+        .text-lg {
+            font-size: clamp(1rem, 3vw, 1.125rem);
         }
 
         .text-2xl {
@@ -186,36 +230,7 @@
             color: #4a5568;
         }
 
-        .text-blue-800 {
-            color: #1e40af;
-        }
-
-        .text-blue-600 {
-            color: #2563eb;
-        }
-
-        .bg-blue-50 {
-            background-color: #eff6ff;
-            padding: 1rem;
-        }
-
-        .border-blue-200 {
-            border-color: #bfdbfe;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        footer {
+	footer {
             text-align: center;
             color: #718096;
             font-size: 0.875rem;
@@ -234,26 +249,25 @@
 </head>
 
 <body>
-    <div class="min-h-screen flex flex-col items-center pb-12">
+    <div>
         <header class="header-bg">
             <div class="header-logo-container">
-                <!-- You can place your <img> tag for the logo here -->
-                <!-- Example: <img src="access_logo-removebg-preview.png" alt="Organization Logo" class="h-24"> -->
-                 <img src="accesslogo.png" alt="BU ACCeSS Logo">
+                <img src="accesslogo.png" alt="BU ACCeSS Logo">
             </div>
             <h1 class="header-title pixel-font">BU Academic Consortium of Computer Science Students</h1>
             <p class="header-text">
-                We are BU ACCeSS. The official department-based organization of the Computer Science Department under the Bicol University College of Science! Partner with us as we enter another academic year and launch a new lineup of dynamic initiatives, events, and campaigns aimed at empowering future innovators and tech leaders.
+                We are BU ACCeSS. The official department-based organization of the Computer Science Department under the
+                Bicol University College of Science! Partner with us as we enter another academic year and launch a new
+                lineup of dynamic initiatives, events, and campaigns aimed at empowering future innovators and tech
+                leaders.
             </p>
         </header>
 
         <main class="container">
-            <!-- Intro Section -->
             <section class="card">
                 <h2 class="section-title pixel-font">Be more than just a media partner, be part of the Kumsayahan!</h2>
-                <p class="text-lg text-gray-700 mb-6">As our official media partner, you'll gain exclusive access to:
-                </p>
-                <ul class="space-y-3 text-gray-700 text-base">
+                <p class="text-lg text-gray-700">As our official media partner, you'll gain exclusive access to:</p>
+                <ul>
                     <li class="package-item">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
@@ -276,20 +290,19 @@
                         <span>Social media visibility to a growing network of students.</span>
                     </li>
                 </ul>
-                <p class="mt-6 text-lg text-gray-700">Let's work together to inspire, inform, and ignite the next
+                <p class="text-lg text-gray-700">Let's work together to inspire, inform, and ignite the next
                     generation of tech-driven minds.</p>
             </section>
 
-            <!-- About Us Section -->
             <section class="card">
                 <h2 class="section-title pixel-font">About Us</h2>
-                <div class="mb-6">
+                <div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-2 pixel-font">Our Mission:</h3>
                     <p class="text-lg text-gray-700">The BU Academic Consortium of Computer Science Students strives to
                         reinforce the structure of today's future thinkers to endow the capacity of tomorrow's
                         envisioned innovators for a revolutionized future.</p>
                 </div>
-                <div class="mb-6">
+                <div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-2 pixel-font">Our Vision:</h3>
                     <p class="text-lg text-gray-700">An organization that upholds the welfare of its constituents
                         through significant and sustainable experiences that cultivate efficient, reliable,
@@ -297,7 +310,7 @@
                 </div>
                 <div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-2 pixel-font">Our Objectives:</h3>
-                    <ol class="list-decimal list-inside space-y-2 text-lg text-gray-700">
+                    <ol>
                         <li>Strive to promote, improve, and develop among students increased knowledge and greater
                             interest and understanding in computer and information technology.</li>
                         <li>Encourage and promote continuing research and study, and may adopt other measures as
@@ -310,338 +323,194 @@
                 </div>
             </section>
 
-            <!-- Partnership Packages Section -->
             <section class="card">
                 <h2 class="section-title pixel-font">Partnership Packages 🤝</h2>
                 <p class="text-lg text-gray-700">Be one of the parts of our organization's circuitry.</p>
-
-                <div class="bg-blue-50 rounded-lg border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 pixel-font">Gold Partner</h3>
-                    <div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700">Benefits:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes to Partner's social media page: 10</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Inclusion of Partner's Name and Logo on event publicity materials</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes and Shares to Partner's publicity material of choice: 10</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Public acknowledgment on event publicity materials: "Media Partners..."</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Certificate of Appreciation</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Shout out during live event (online/on-site)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Responsibilities:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes to BU ACCESS FB Page: 10</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes and Shares to all event publicity materials: 10</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Provide attendees to online events: 4</li>
-                            </ul>
-                        </div>
-                    </div>
+                
+                <div class="table-container">
+                    <table class="package-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Gold Partner</th>
+                                <th>Palladium Partner</th>
+                                <th>Copper Partner</th>
+                                <th>Tin Partner</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="subheader-row">
+                                <th colspan="5">Benefits</th>
+                            </tr>
+                            <tr>
+                                <td>Likes to Partner's Social Media Page</td>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>6</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Inclusion of Name & Logo on Event Pub Mats</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Likes & Shares to Partner's Pub Mat of Choice</td>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>—</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Public Acknowledgment on Pub Mats</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Social Media Promotion on Event Pub Mats</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>✅</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Inclusion on "Thank You" Publication</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Shout Out During Live Event</td>
+                                <td>✅</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Certificate of Appreciation</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr class="subheader-row">
+                                <th colspan="5">Responsibilities</th>
+                            </tr>
+                            <tr>
+                                <td>Likes to BU ACCeSS FB Page</td>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>6</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Likes & Shares to All Event Pub Mats</td>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>6</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Provide Attendees to Online Events</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                </section>
 
-                <div class="bg-blue-50 p-6 rounded-lg mb-6 border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3 pixel-font">Palladium Partner</h3>
-                    <div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Benefits:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes to Partner's social media page: 8</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Inclusion of Partner's Name and Logo on event publicity materials</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes and Shares to Partner's publicity material of choice: 8</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Public acknowledgment on event publicity materials: "Media Partners..."</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Certificate of Appreciation</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Responsibilities:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes to BU ACCESS FB Page: 8</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes and Shares to all event publicity materials: 8</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Provide attendees to online events: 3</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-blue-50 p-6 rounded-lg mb-6 border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3 pixel-font">Copper Partner</h3>
-                    <div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Benefits:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Social media promotion on event publicity materials</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Inclusion of Partner's Name and Logo on "Thank You, Sponsors!" publication
-                                    material</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>6 new likes on company's social media page.</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Public acknowledgment on event publicity materials: "Media Partners..."</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Certificate of Appreciation</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Responsibilities:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes to BU ACCESS FB Page: 6</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes and Shares to all event publicity materials: 6</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Provide attendees to online event/s: 2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-blue-50 p-6 rounded-lg mb-6 border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3 pixel-font">Tin Partner</h3>
-                    <div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Benefits:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes to Partner's social media page: 4</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Inclusion of Partner's Name and Logo on "Thank You, Sponsors!" publication
-                                    material</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes and Shares to Partner's publicity material of choice: 4</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Public acknowledgment on event publicity materials: "Media Partners..."</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Certificate of Appreciation</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Responsibilities:</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes to BU ACCESS FB Page: 4</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Likes and Shares to all event publicity materials: 4</li>
-                                <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>Provide attendees to online events: 1</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sponsorship Packages Section -->
             <section class="card">
-                <h2 class="section-title">Sponsorship Packages📋</h2>
-                <p class="text-lg text-gray-700 mb-8">Power the System. Fuel the Vision. Be the Energy behind the
-                    Success.</p>
+                <h2 class="section-title pixel-font">Sponsorship Packages📋</h2>
+                <p class="text-lg text-gray-700">Power the System. Fuel the Vision. Be the Energy behind the Success.</p>
 
-                <!-- Gold Sponsor -->
-                <div class="bg-blue-50 rounded-lg mb-6 border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3 pixel-font">Gold Sponsor</h3>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Acknowledgements: "Co-presented by..."</h4>
-                    <p class="text-lg text-gray-600 mb-4">Total Worth of Monetary/Product Sponsorship: Php 2,000 above
-                    </p>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Benefits:</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Social media promotion on event publicity materials</li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Inclusion of company’s name and logo on “Thank You, Sponsors!” publication material
-                        </li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>20 new likes on company’s social media page.</li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Inclusion of company logo during live event presentation (1 whole slide)</li>
-                    </ul>
+                <div class="table-container">
+                    <table class="package-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Gold Sponsor</th>
+                                <th>Palladium Sponsor</th>
+                                <th>Copper Sponsor</th>
+                                <th>Tin Sponsor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Acknowledgement Title</strong></td>
+                                <td>"Co-presented by..."</td>
+                                <td>"Major Sponsor"</td>
+                                <td>"Minor Sponsor"</td>
+                                <td>"Special Thanks to..."</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monetary/Product Worth</strong></td>
+                                <td>Php 2,000 above</td>
+                                <td>Minimum of Php 1,500</td>
+                                <td>Minimum of Php 1,000</td>
+                                <td>Minimum of Php 400</td>
+                            </tr>
+                            <tr class="subheader-row">
+                                <th colspan="5">Benefits</th>
+                            </tr>
+                            <tr>
+                                <td>Social Media Promotion on Event Pub Mats</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Inclusion on "Thank You" Publication</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>New Likes on Company's Social Media Page</td>
+                                <td>20</td>
+                                <td>10</td>
+                                <td>6</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Inclusion of Logo During Live Event</td>
+                                <td>✅ (1 whole slide)</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                </section>
 
-                <!-- Palladium Sponsor -->
-                <div class="bg-blue-50 rounded-lg mb-6 border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3 pixel-font">Palladium Sponsor</h3>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Acknowledgements: "Major Sponsor"</h4>
-                    <p class="text-lg text-gray-600 mb-4">Total Worth of Monetary/Product Sponsorship: Minimum of Php
-                        1,500</p>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Benefits:</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Social media promotion on event publicity materials</li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Inclusion of company’s name and logo on “Thank You, Sponsors!” publication material
-                        </li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>10 new likes on company’s social media page.</li>
-                    </ul>
-                </div>
-
-                <!-- Copper Sponsor -->
-                <div class="bg-blue-50 rounded-lg mb-6 border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3 pixel-font">Copper Sponsor</h3>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Acknowledgements: "Minor Sponsor"</h4>
-                    <p class="text-lg text-gray-600 mb-4">Total Worth of Monetary/Product Sponsorship: Minimum of Php
-                        1,000</p>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Benefits:</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Social media promotion on event publicity materials</li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Inclusion of company’s name and logo on “Thank You, Sponsors!” publication material
-                        </li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>6 new likes on company’s social media page.</li>
-                    </ul>
-                </div>
-
-                <!-- Tin Sponsor -->
-                <div class="bg-blue-50 rounded-lg mb-6 border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3 pixel-font">Tin Sponsor</h3>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Acknowledgements: "Special Thanks to..."</h4>
-                    <p class="text-lg text-gray-600 mb-4">Total Worth of Monetary/Product Sponsorship: Minimum of Php
-                        400</p>
-                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Benefits:</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Social media promotion on event publicity materials</li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>Inclusion of company’s name and logo on “Thank You, Sponsors!” publication material
-                        </li>
-                        <li class="package-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>3 new likes on company’s social media page.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Contact Us Section -->
             <section class="card">
                 <h2 class="section-title pixel-font">Contact Us</h2>
                 <div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-2 pixel-font">Emails:</h3>
-                    <p class="text-lg text-gray-700 mb-2">Organization Email: <a href="mailto:bu_access@bicol-u.edu.ph"
-                            class="text-blue-600 hover:underline">bu_access@bicol-u.edu.ph</a></p>
+                    <p class="text-lg text-gray-700">Organization Email: <a
+                            href="mailto:bu_access@bicol-u.edu.ph">bu_access@bicol-u.edu.ph</a></p>
                     <p class="text-lg text-gray-700">Externals Committee Email: <a
-                            href="mailto:bu_access.externalcom@bicol-u.edu.ph"
-                            class="text-blue-600 hover:underline">bu_access.externalcom@bicol-u.edu.ph</a></p>
+                            href="mailto:bu_access.externalcom@bicol-u.edu.ph">bu_access.externalcom@bicol-u.edu.ph</a>
+                    </p>
                 </div>
-                <div class="mb-6">
+                <div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-2 pixel-font">Socials:</h3>
-                    <p class="text-lg text-gray-700 mb-2">Official Facebook Page: <a
-                            href="https://www.facebook.com/ACCeSSBicolU"
-                            [cite_start]class="text-blue-600 hover:underline">ACCeSSBicolU</a></p>
-                    <p class="text-lg text-gray-700 mb-2">Official Instagram Page: <a
-                            href="https://www.instagram.com/ACCeSSBicolU"
-                            [cite_start]class="text-blue-600 hover:underline">@accessbicolu</a></p>
-                    <p class="text-lg text-gray-700">Official X Page: <a href="https://x.com/ACCeSSBicolU"
-                            [cite_start]class="text-blue-600 hover:underline">@ACCeSSBicolU</a></p>
+                    <p class="text-lg text-gray-700">Official Facebook Page: <a
+                            href="https://www.facebook.com/ACCeSSBicolU">ACCeSSBicolU</a></p>
+                    <p class="text-lg text-gray-700">Official Instagram Page: <a
+                            href="https://www.instagram.com/ACCeSSBicolU">@accessbicolu</a></p>
+                    <p class="text-lg text-gray-700">Official X Page: <a
+                            href="https://x.com/ACCeSSBicolU">@ACCeSSBicolU</a></p>
                 </div>
                 <div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-2 pixel-font">Visit Us:</h3>
