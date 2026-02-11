@@ -256,6 +256,32 @@
                 text-align: center;
             }
 
+			.header-logo-container {
+                /* Keep logo visible on small screens but make it responsive and unobtrusive */
+                display: flex;
+                position: relative;
+                left: auto;
+                top: auto;
+                transform: none;
+                width: auto;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                padding: 0.25rem 0;
+                margin: 0 auto 1rem;
+                z-index: 10;
+            }
+
+            .header-logo-container img {
+                width: 4.5rem; /* ~72px on base font-size */
+                max-width: 35%;
+                height: auto;
+                object-fit: contain;
+                display: block;
+                margin-left: 0;
+                opacity: 1;
+            }
+
             .card {
                 padding: 1rem;
             }
@@ -635,6 +661,7 @@
 </body>
 
 </html>
+
 
 
 
